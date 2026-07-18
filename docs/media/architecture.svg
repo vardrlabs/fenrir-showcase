@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="960" height="640" fill="#ffffff"/>
+  <text x="480" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1c2733">FENRIR — three layers, one bus, four hot-swap bays</text>
+
+  <!-- Layer 3 -->
+  <rect x="180" y="52" width="600" height="92" rx="10" fill="#eef3fa" stroke="#3b6ea5" stroke-width="2"/>
+  <text x="480" y="76" text-anchor="middle" font-size="15" font-weight="bold" fill="#1c2733">LAYER 3 · COGNITION — Raspberry Pi 5 + AI HAT+ 2 (Hailo-10H)</text>
+  <text x="480" y="98" text-anchor="middle" font-size="12" fill="#33475c">local vision (YOLO26 / RF-DETR, MediaPipe) · voice (whisper.cpp → FunctionGemma → Piper)</text>
+  <text x="480" y="116" text-anchor="middle" font-size="12" fill="#33475c">Skill Registry · telemetry &amp; command API · ROS 2 Jazzy — all AI on-robot, nothing in the cloud</text>
+  <text x="480" y="134" text-anchor="middle" font-size="11" font-style="italic" fill="#5a6c7d">the robot never depends on this layer to remain standing</text>
+
+  <!-- host link -->
+  <line x1="480" y1="144" x2="480" y2="180" stroke="#5a6c7d" stroke-width="2"/>
+  <text x="492" y="166" font-size="11" fill="#5a6c7d">host link (USB-serial / Ethernet)</text>
+
+  <!-- Layer 2 -->
+  <rect x="180" y="180" width="600" height="84" rx="10" fill="#f2f7ef" stroke="#4b7d3f" stroke-width="2"/>
+  <text x="480" y="204" text-anchor="middle" font-size="15" font-weight="bold" fill="#1c2733">LAYER 2 · REAL-TIME — Teensy 4.1 bus master</text>
+  <text x="480" y="226" text-anchor="middle" font-size="12" fill="#33475c">safety supervisor · node discovery &amp; health registry · IMU fusion · joint commands</text>
+  <text x="480" y="246" text-anchor="middle" font-size="12" fill="#33475c">drives the bay status LEDs directly — health stays visible even with the Pi down</text>
+
+  <!-- CAN buses -->
+  <line x1="330" y1="264" x2="330" y2="322" stroke="#a0522d" stroke-width="3"/>
+  <line x1="630" y1="264" x2="630" y2="322" stroke="#a0522d" stroke-width="3"/>
+  <text x="330" y="300" text-anchor="middle" font-size="12" font-weight="bold" fill="#a0522d">CAN bus L (left legs)</text>
+  <text x="630" y="300" text-anchor="middle" font-size="12" font-weight="bold" fill="#a0522d">CAN bus R (right legs)</text>
+  <line x1="180" y1="322" x2="480" y2="322" stroke="#a0522d" stroke-width="3"/>
+  <line x1="480" y1="322" x2="780" y2="322" stroke="#a0522d" stroke-width="3"/>
+  <line x1="255" y1="322" x2="255" y2="352" stroke="#a0522d" stroke-width="2"/>
+  <line x1="405" y1="322" x2="405" y2="352" stroke="#a0522d" stroke-width="2"/>
+  <line x1="555" y1="322" x2="555" y2="352" stroke="#a0522d" stroke-width="2"/>
+  <line x1="705" y1="322" x2="705" y2="352" stroke="#a0522d" stroke-width="2"/>
+
+  <!-- Bays -->
+  <g font-size="11">
+    <!-- FL -->
+    <rect x="185" y="352" width="140" height="128" rx="8" fill="#fff" stroke="#b03434" stroke-width="2"/>
+    <text x="255" y="372" text-anchor="middle" font-weight="bold" font-size="13" fill="#b03434">BAY FL (front-left)</text>
+    <text x="255" y="392" text-anchor="middle" fill="#33475c">3 self-announcing joints</text>
+    <text x="255" y="408" text-anchor="middle" fill="#33475c">hip · thigh · knee</text>
+    <text x="255" y="426" text-anchor="middle" fill="#33475c">secondary abs. encoders</text>
+    <text x="255" y="446" text-anchor="middle" fill="#33475c">status LED ring</text>
+    <text x="255" y="466" text-anchor="middle" font-weight="bold" fill="#1c2733">XT30 ⏻ + JST-GH ⌁ only</text>
+    <!-- RL -->
+    <rect x="335" y="352" width="140" height="128" rx="8" fill="#fff" stroke="#2f4d8f" stroke-width="2"/>
+    <text x="405" y="372" text-anchor="middle" font-weight="bold" font-size="13" fill="#2f4d8f">BAY RL (rear-left)</text>
+    <text x="405" y="392" text-anchor="middle" fill="#33475c">3 self-announcing joints</text>
+    <text x="405" y="408" text-anchor="middle" fill="#33475c">hip · thigh · knee</text>
+    <text x="405" y="426" text-anchor="middle" fill="#33475c">secondary abs. encoders</text>
+    <text x="405" y="446" text-anchor="middle" fill="#33475c">status LED ring</text>
+    <text x="405" y="466" text-anchor="middle" font-weight="bold" fill="#1c2733">XT30 ⏻ + JST-GH ⌁ only</text>
+    <!-- FR -->
+    <rect x="485" y="352" width="140" height="128" rx="8" fill="#fff" stroke="#3f7d46" stroke-width="2"/>
+    <text x="555" y="372" text-anchor="middle" font-weight="bold" font-size="13" fill="#3f7d46">BAY FR (front-right)</text>
+    <text x="555" y="392" text-anchor="middle" fill="#33475c">3 self-announcing joints</text>
+    <text x="555" y="408" text-anchor="middle" fill="#33475c">hip · thigh · knee</text>
+    <text x="555" y="426" text-anchor="middle" fill="#33475c">secondary abs. encoders</text>
+    <text x="555" y="446" text-anchor="middle" fill="#33475c">status LED ring</text>
+    <text x="555" y="466" text-anchor="middle" font-weight="bold" fill="#1c2733">XT30 ⏻ + JST-GH ⌁ only</text>
+    <!-- RR -->
+    <rect x="635" y="352" width="140" height="128" rx="8" fill="#fff" stroke="#a08a1f" stroke-width="2"/>
+    <text x="705" y="372" text-anchor="middle" font-weight="bold" font-size="13" fill="#a08a1f">BAY RR (rear-right)</text>
+    <text x="705" y="392" text-anchor="middle" fill="#33475c">3 self-announcing joints</text>
+    <text x="705" y="408" text-anchor="middle" fill="#33475c">hip · thigh · knee</text>
+    <text x="705" y="426" text-anchor="middle" fill="#33475c">secondary abs. encoders</text>
+    <text x="705" y="446" text-anchor="middle" fill="#33475c">status LED ring</text>
+    <text x="705" y="466" text-anchor="middle" font-weight="bold" fill="#1c2733">XT30 ⏻ + JST-GH ⌁ only</text>
+  </g>
+  <text x="480" y="502" text-anchor="middle" font-size="12" font-style="italic" fill="#5a6c7d">a leg detaches with 2 plugs + 4 bolts — while the robot keeps its feet</text>
+
+  <!-- 7-state machine -->
+  <rect x="90" y="524" width="780" height="76" rx="10" fill="#faf6ee" stroke="#8a7a4a" stroke-width="2"/>
+  <text x="480" y="546" text-anchor="middle" font-size="13" font-weight="bold" fill="#1c2733">one health vocabulary — every component, firmware to UI, and every bay LED</text>
+  <g font-size="12" font-weight="bold">
+    <circle cx="152" cy="572" r="6" fill="#606060"/><text x="166" y="577" fill="#33475c">OFFLINE</text>
+    <text x="238" y="577" fill="#8a7a4a">→</text>
+    <circle cx="262" cy="572" r="6" fill="#c03434"/><text x="276" y="577" fill="#33475c">DISCOVERED</text>
+    <text x="378" y="577" fill="#8a7a4a">→</text>
+    <circle cx="402" cy="572" r="6" fill="#d99a2b"/><text x="416" y="577" fill="#33475c">CALIBRATING</text>
+    <text x="522" y="577" fill="#8a7a4a">→</text>
+    <circle cx="546" cy="572" r="6" fill="#3f7d46"/><text x="560" y="577" fill="#33475c">READY</text>
+    <text x="622" y="577" fill="#8a7a4a">→</text>
+    <circle cx="646" cy="572" r="6" fill="#5fae68"/><text x="660" y="577" fill="#33475c">ACTIVE</text>
+    <text x="726" y="577" fill="#8a7a4a">⇄</text>
+    <circle cx="750" cy="572" r="6" fill="#d9702b"/><text x="764" y="577" fill="#33475c">DEGRADED</text>
+  </g>
+  <text x="480" y="620" text-anchor="middle" font-size="11" fill="#5a6c7d">(+ FAULT, flashing red — recoverable through re-calibration; the physical e-stop sits above everything in this diagram)</text>
+</svg>

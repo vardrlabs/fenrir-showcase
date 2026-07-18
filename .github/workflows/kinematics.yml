@@ -1,0 +1,19 @@
+# Public CI: the production kinematics test suite, run on every push.
+# Same suite, same numbers as the private development repo.
+name: kinematics
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  kinematics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install numpy
+      - run: python test_fenrir_kinematics.py
+        working-directory: kinematics
