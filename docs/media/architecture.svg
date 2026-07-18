@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" font-family="Helvetica, Arial, sans-serif">
   <rect x="0" y="0" width="960" height="640" fill="#ffffff"/>
-  <text x="480" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1c2733">FENRIR — three layers, one bus, four hot-swap bays</text>
+  <text x="480" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1c2733">FENRIR — three layers, two buses, four hot-swap bays</text>
 
   <!-- Layer 3 -->
   <rect x="180" y="52" width="600" height="92" rx="10" fill="#eef3fa" stroke="#3b6ea5" stroke-width="2"/>
