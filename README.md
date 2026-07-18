@@ -36,13 +36,15 @@ every push:
 - **Firmware skeleton for the real-time layer**: 16 hardware-free native
   tests and a compiling embedded target, in CI.
 
-**Trot** (12 color-coded joints, fixed + tracking cameras):
+**Trot** (12 color-coded joints, fixed + tracking cameras) —
+[full-quality mp4](docs/media/trot.mp4):
 
-https://github.com/vardrlabs/fenrir-showcase/raw/main/docs/media/trot.mp4
+![Trot](docs/media/trot.gif)
 
-**Crawl** (statically stable gait, lateral body-shift choreography):
+**Crawl** (statically stable gait, lateral body-shift choreography) —
+[full-quality mp4](docs/media/crawl.mp4):
 
-https://github.com/vardrlabs/fenrir-showcase/raw/main/docs/media/crawl.mp4
+![Crawl](docs/media/crawl.gif)
 
 Motor operating region, every joint, full rollout — the trajectories stay
 deep inside the actuator envelope:
