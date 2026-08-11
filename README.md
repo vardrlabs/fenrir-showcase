@@ -51,6 +51,8 @@ deep inside the actuator envelope:
 
 ![Trot MOR](docs/media/trot_mor.png)
 
+**First hardware contact, 2026-08-11** — [what the actuator actually said](docs/bringup/2026-08-11-first-contact.md): the shipped firmware reports a version that does not mean what it says, and the encoder resolution question is settled.
+
 ## How this gets built
 
 FENRIR is developed by one engineer working with Anthropic's Claude as a
