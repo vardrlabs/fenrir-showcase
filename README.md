@@ -16,9 +16,11 @@ reference platform for an open modular-robotics SDK.
 
 ## Status — what provably works today
 
-Hardware arrives late July 2026. Everything below is real, current, and
-verified — the badge above runs the production kinematics test suite on
-every push:
+Hardware is on the bench: four actuators received, one powered and read
+over USB on 2026-08-11 — see [first contact](docs/bringup/2026-08-11-first-contact.md).
+**Nothing has moved under power yet**, and no gait has run on hardware.
+Everything below is simulation and CI, real and current — the badge above
+runs the production kinematics test suite on every push:
 
 - **Closed-form leg kinematics**, verified at machine precision: 10,000
   round trips at ~3×10⁻¹⁶ m, analytic Jacobian against finite differences,
@@ -94,4 +96,4 @@ Apache-2.0 planned; hardware: CERN-OHL-P planned).
 ---
 
 *This repository is manually curated from the private development repo at
-milestones. Last updated: 2026-07-17.*
+milestones. Last updated: 2026-08-11.*

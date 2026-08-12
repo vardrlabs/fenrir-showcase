@@ -58,6 +58,14 @@ trajectories with near-zero touchdown velocity fixed both. Trot covers
 150 cm in 10 s in simulation; crawl velocity smoothness improved 42% the
 same week.
 
-**Next gate — hardware arrival (~2026-07-25):** actuator datasheet
-verification, one-joint bring-up using the same wiggle procedure that runs
-in CI, bench characterization.
+**2026-08-11 — first hardware contact.** Four actuators received; one powered
+and read over USB in a read-only session. The motor never moved and nothing
+was written to the device. Settled the encoder resolution question at 14-bit
+and found two shipped defaults that contradict the vendor manuals; the shipped
+firmware turns out to be a vendor fork whose version number does not mean what
+it appears to. See [first contact](bringup/2026-08-11-first-contact.md).
+
+**Next gate — first motion under power:** reduce the current limit to something
+the bench supply sustains, verify whether absolute joint position survives a
+power cycle, then one-joint bring-up using the same wiggle procedure that runs
+in CI, and bench characterization.

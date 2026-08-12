@@ -2,8 +2,8 @@
 
 Complete component list for the v1 build. Compiled 2026-07-17 from the
 private Build Bible v2.1 BOM, the robot configuration, and the build-log
-order history. Statuses: **owned** · **ordered** (date, ETA) · **planned**
-(phase-gated) · **canceled** (kept for the record).
+order history. Statuses: **owned** · **received** (ordered, in hand) · **planned**
+(phase-gated) · **canceled** / **substituted** (kept for the record).
 
 Prices are estimates at order time, USD.
 
@@ -11,7 +11,7 @@ Prices are estimates at order time, USD.
 
 | Item | Qty | Unit est. | Status | Notes |
 |---|---|---|---|---|
-| SteadyWin GIM6010-8, **Standard body, 24 V winding, GDS68 driver, WITH secondary output-shaft encoder, no brake** | 4 | $100–150 | **Ordered 2026-07-12**, ETA ~Jul 25 | One leg + spare; all units identical. Secondary encoder gives absolute joint position on power-up: no recalibration after hot-swap. No brake: the robot lies down unpowered |
+| SteadyWin GIM6010-8, **Standard body, 24 V winding, GDS68 driver, WITH secondary output-shaft encoder, no brake** | 4 | $100–150 | **Received** (ordered 2026-07-12) | One leg + spare; all units identical. Secondary encoder gives absolute joint position on power-up: no recalibration after hot-swap. No brake: the robot lies down unpowered |
 | SteadyWin GIM6010-8 (same variant) | 8 | $100–150 | Planned | Fleet completion after one-leg validation |
 | MiToot 2804 gimbal motor, 100 KV | 1 | owned | **Owned** | Bench/learning rig only (~0.1 N·m class) |
 | SimpleFOC Mini (DRV8313) | 1 | owned | **Owned** | Bench rig driver (~2.5 A limit) |
@@ -23,7 +23,7 @@ Prices are estimates at order time, USD.
 | Item | Qty | Unit est. | Status | Notes |
 |---|---|---|---|---|
 | Raspberry Pi 5, 8 GB | 1 | owned | **Owned** | Layer 3 cognition, Ubuntu 24.04 + ROS 2 Jazzy |
-| Raspberry Pi AI HAT+ 2 (Hailo-10H, 40 TOPS) + active cooler | 1 + 1 | ~$140 | **Ordered 2026-07-12** | Vision AND local LLM acceleration; cooler non-negotiable |
+| Raspberry Pi AI HAT+ 2 (Hailo-10H, 40 TOPS) + active cooler | 1 + 1 | ~$140 | **Received** (ordered 2026-07-12) | Vision AND local LLM acceleration; cooler non-negotiable |
 | Teensy 4.1 (600 MHz Cortex-M7) | 1 | owned | **Owned** | Layer 2 real-time: CAN master, safety supervisor, health registry |
 | Raspberry Pi Camera Module 3 | 1 | owned | **Owned** | Head has two camera bays: stereo = matched pair later; NoIR night module = separate attachment |
 | Touchscreen(s) | 1–2 | owned | **Owned** | Debug/UI panels |
@@ -32,33 +32,33 @@ Prices are estimates at order time, USD.
 
 | Item | Qty | Unit est. | Status | Notes |
 |---|---|---|---|---|
-| TDK QCIoT-ICM42688P Pmod IMU (SPI) | 1 | ~$32 | **Ordered 2026-07-12** | Fallbacks qualified: ISM330DHCX or BMI088. Driver-node isolation makes the choice invisible to the rest of the stack |
+| TDK QCIoT-ICM42688P Pmod IMU (SPI) | 1 | ~$32 | **Received** (ordered 2026-07-12) | Fallbacks qualified: ISM330DHCX or BMI088. Driver-node isolation makes the choice invisible to the rest of the stack |
 | MT6816 magnetic encoders, 14-bit SPI/ABZ | 3 | owned | **Owned** | Bench actuator encoders |
 | AS5600 encoder | 1 | owned | **Owned** | Bench rig first pass (I²C); driven joints use SPI |
-| INA228 power monitor, 20-bit | 1 | ~$8 | **Ordered 2026-07-12** | Main battery line: coulomb counting → state of charge |
-| INA226 power monitor | 4 | ~$3 | **Ordered 2026-07-12** | One per leg rail: per-leg current telemetry |
+| INA228 power monitor, 20-bit | 1 | ~$8 | **Received** (ordered 2026-07-12) | Main battery line: coulomb counting → state of charge |
+| INA226 power monitor | 4 | ~$3 | **Received** (ordered 2026-07-12) | One per leg rail: per-leg current telemetry |
 
 ## Power
 
 | Item | Qty | Unit est. | Status | Notes |
 |---|---|---|---|---|
-| Mean Well LRS-350-24 bench PSU (24 V, 350 W) | 1 | ~$35 | **Ordered 2026-07-12** | Develop on PSU, not LiPo |
+| ~~Mean Well LRS-350-24 bench PSU (24 V, 350 W)~~ → **DROK 24 V / 20 A** | 1 | ~$35 | **Substituted 2026-08-11** | Never obtained; a DROK 24 V / 20 A bench supply is in use instead. ~20 A available — still below one unit's 25 A stall current, and like any switching supply it cannot sink regenerative current. Develop on PSU, not LiPo |
 | 6S LiPo battery | 1 | ~$100 | Planned (Phase 2) | Bench PSU until untethered work starts |
 | 5 V / 5 A BEC | 1 | ~$20 | Planned (Phase 2) | Pi rail; sized to ride through motor transients |
-| Blade fuses, **25 A** (leg rails) | 4 + spares | assort. | **Ordered 2026-07-12** | One fused rail per leg module |
-| Blade fuse, **40 A** (main line) | 1 + spares | assort. | **Ordered 2026-07-12** | Battery main |
-| Inline fuse holders, 12 AWG | 4 | ~$2 | **Ordered 2026-07-12** | Leg rails |
-| Inline fuse holder, 10 AWG | 1 | ~$3 | **Ordered 2026-07-12** | Main line |
+| Blade fuses, **25 A** (leg rails) | 4 + spares | assort. | **Received** (ordered 2026-07-12) | One fused rail per leg module |
+| Blade fuse, **40 A** (main line) | 1 + spares | assort. | **Received** (ordered 2026-07-12) | Battery main |
+| Inline fuse holders, 12 AWG | 4 | ~$2 | **Received** (ordered 2026-07-12) | Leg rails |
+| Inline fuse holder, 10 AWG | 1 | ~$3 | **Received** (ordered 2026-07-12) | Main line |
 
 ## Connectivity & wiring
 
 | Item | Qty | Unit est. | Status | Notes |
 |---|---|---|---|---|
-| SN65HVD230 CAN transceiver breakouts | 5 | ~$2.50 | **Ordered 2026-07-12** | Dual CAN buses + spares; 120 Ω termination both ends of each bus |
-| XT30 connector pairs | kit | ~$15 | **Ordered 2026-07-12** | Per-leg power half of the two-connector hot-swap interface |
-| JST-GH 4-pin cable kit, **"Same Direction"** (straight-through) | kit | ~$15 | **Ordered 2026-07-12** | CAN daisy-chain. Never the "Reverse" variant: it swaps CAN H/L |
-| JST-GH 4-pin **"Single Head"** pigtails | kit | incl. | **Ordered 2026-07-12** | Board-end termination |
-| 16 AWG silicone wire | spool | incl. | **Ordered 2026-07-12** | Power runs |
+| SN65HVD230 CAN transceiver breakouts | 5 | ~$2.50 | **Received** (ordered 2026-07-12) | Dual CAN buses + spares; 120 Ω termination both ends of each bus |
+| XT30 connector pairs | kit | ~$15 | **Received** (ordered 2026-07-12) | Per-leg power half of the two-connector hot-swap interface |
+| JST-GH 4-pin cable kit, **"Same Direction"** (straight-through) | kit | ~$15 | **Received** (ordered 2026-07-12) | CAN daisy-chain. Never the "Reverse" variant: it swaps CAN H/L |
+| JST-GH 4-pin **"Single Head"** pigtails | kit | incl. | **Received** (ordered 2026-07-12) | Board-end termination |
+| 16 AWG silicone wire | spool | incl. | **Received** (ordered 2026-07-12) | Power runs |
 | SK6812 addressable LED segments + 74AHCT125 level shifter + wiring (series resistor, bulk capacitor) | 1 set | ~$20 | Planned (Phase 1 batch) | Bay status LEDs: the health state machine, visible across the room |
 
 ## Structure & filament
@@ -84,7 +84,7 @@ Prices are estimates at order time, USD.
 
 | Item | Qty | Unit est. | Status | Notes |
 |---|---|---|---|---|
-| Big red e-stop switch | 1 | ~$10 | **Ordered 2026-07-12** | Wired into the main line from day one; supreme over all software |
+| Big red e-stop switch | 1 | ~$10 | **Received** (ordered 2026-07-12) | Wired into the main line from day one; supreme over all software |
 | Soldering station | 1 | owned | **Owned** | |
 | Pixhawk flight controller | 1 | owned | **Owned** | Shelved for a future aerial variant; its JST-GH cables serve as compatible spares |
 
