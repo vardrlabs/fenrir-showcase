@@ -149,8 +149,11 @@ one. Four hand-assembled components and a harness per joint kills hot-swap in
 practice, which is the entire point of the robot.
 
 The fleet is therefore **integrated smart actuators**: 5 N·m rated and 11 N·m peak,
-388 g, 80 mm diameter, 8:1 planetary reduction, a 16-bit driver encoder plus an
+388 g, 80 mm diameter, 8:1 planetary reduction, a 14-bit driver encoder plus an
 output-shaft encoder, CAN, and a USB-C configuration port. All twelve units identical.
+The encoder figure is read off the hardware — `cpr = 16384`, which is 2¹⁴ exactly. The
+vendor's product listing and an older manual revision both claimed 16-bit; the newer
+manual revision and the encoder's part number were right.
 The output-shaft encoder is what earns its place: it reports absolute joint position
 on power-up, so a swapped module needs no recalibration.
 
