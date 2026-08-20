@@ -11,7 +11,7 @@ Prices are estimates at order time, USD.
 
 | Item | Qty | Unit est. | Status | Notes |
 |---|---|---|---|---|
-| SteadyWin GIM6010-8, **Standard body, 24 V winding, GDS68 driver, WITH secondary output-shaft encoder, no brake** | 4 | $100–150 | **Received** (ordered 2026-07-12) | One leg + spare; all units identical. Secondary encoder gives absolute joint position on power-up: no recalibration after hot-swap. No brake: the robot lies down unpowered |
+| SteadyWin GIM6010-8, **Standard body, 24 V winding, GDS68 driver, WITH secondary output-shaft encoder, no brake** | 4 | $100–150 | **Received** (ordered 2026-07-12) | One leg + spare; all units identical. Secondary encoder gives absolute joint position on power-up: no recalibration after hot-swap — **verified on hardware 2026-08-18** ([bring-up note](bringup/2026-08-18-hot-swap-position-verified.md)), within a recovery window of one output revolution. No brake: the robot lies down unpowered |
 | SteadyWin GIM6010-8 (same variant) | 8 | $100–150 | Planned | Fleet completion after one-leg validation |
 | MiToot 2804 gimbal motor, 100 KV | 1 | owned | **Owned** | Bench/learning rig only (~0.1 N·m class) |
 | SimpleFOC Mini (DRV8313) | 1 | owned | **Owned** | Bench rig driver (~2.5 A limit) |
