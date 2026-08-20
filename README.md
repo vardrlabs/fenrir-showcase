@@ -76,6 +76,8 @@ rigor is the point; authorship is a detail.
   quantities, and status, down to the fuses.
 - [Milestones](docs/MILESTONES.md) — dated, verified results from the
   build log.
+- [Bring-up log](docs/bringup/) — dated notes from hardware sessions: what
+  was measured, what it corrected, and what is still untested.
 - [`common/component_state.h`](common/component_state.h) — the seven-state
   health enum, as it ships.
 

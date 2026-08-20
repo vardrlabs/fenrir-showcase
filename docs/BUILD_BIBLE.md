@@ -155,7 +155,12 @@ The encoder figure is read off the hardware — `cpr = 16384`, which is 2¹⁴ e
 vendor's product listing and an older manual revision both claimed 16-bit; the newer
 manual revision and the encoder's part number were right.
 The output-shaft encoder is what earns its place: it reports absolute joint position
-on power-up, so a swapped module needs no recalibration.
+on power-up, so a swapped module needs no recalibration. **Verified on hardware
+2026-08-18** — position survived a power cycle *including movement while the unit was
+unpowered*, confirmed by reversal
+([bring-up note](bringup/2026-08-18-hot-swap-position-verified.md)). One limit came with
+it: recovery holds within **one output revolution**, roughly ±180°, and beyond that window
+the joint recovers a full revolution out with no error raised.
 
 **Ordering rule:** buy one leg's worth plus a spare, validate the complete leg on
 hardware — bring-up, thermals, hot-swap recovery, torque tracking — and only then
