@@ -1,7 +1,7 @@
 # FENRIR development milestones
 
 Curated highlights from the private build log, results-and-dates level.
-Source: private repo `docs/build_log.md` · compiled 2026-07-17.
+Source: private repo `docs/build_log.md` · compiled 2026-07-17, extended 2026-09-06.
 
 **2026-07-12 — Architecture v2 frozen; leg kinematics derived and verified.**
 Closed-form IK/FK/analytic Jacobian for the 3-DOF leg, with a verification
@@ -65,7 +65,28 @@ and found two shipped defaults that contradict the vendor manuals; the shipped
 firmware turns out to be a vendor fork whose version number does not mean what
 it appears to. See [first contact](bringup/2026-08-11-first-contact.md).
 
-**Next gate — first motion under power:** reduce the current limit to something
-the bench supply sustains, verify whether absolute joint position survives a
-power cycle, then one-joint bring-up using the same wiggle procedure that runs
-in CI, and bench characterization.
+**2026-08-18 — hot-swap position recovery verified.** The output-shaft
+encoder recovers absolute joint position across a power cycle *including
+movement that happened while the unit was unpowered* — the property
+recalibration-free module swapping depends on. Tested with a design that could
+distinguish real sensing from a value merely remembered in flash: four readings
+plus a reversal, with two independently measured quantities agreeing to four
+decimal places. Also established the limit: recovery holds within one output
+revolution. See [position recovery](bringup/2026-08-18-hot-swap-position-verified.md).
+
+**2026-09-03 — the fleet leaves its factory state.** First writes ever made to
+this hardware: all four actuators configured, every value saved to flash,
+power-cycled and read back to confirm it survived. Vendor factory calibration
+came through the write intact on all four. Position recovery survived a
+configuration write, save and reboot to 0.110° at the output, under half the
+gearbox backlash. The same session confirmed the bad half: a joint turned
+through a full output revolution while disconnected returns wrong by exactly
+one revolution and **raises no error**, so the remedy is mechanical hard stops.
+It also corrected our own earlier reasoning — arithmetic we had treated as
+settling where the recovery window sits turned out to fix only its width. See
+[first configuration](bringup/2026-09-03-first-configuration.md).
+
+**Next gate — first motion under power:** settle where the recovery window
+actually sits, prove the CAN bus with a passive listen before anything is
+commanded, wire the emergency stop into the DC main, then one-joint bring-up
+using the same wiggle procedure that runs in CI, and bench characterization.
