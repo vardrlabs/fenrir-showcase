@@ -9,6 +9,12 @@ Four GIM6010-8 actuators are on the bench. All four have been read and configure
 output-shaft encoder has been tested across a power cycle, and as of 2026-09-04 **there is a
 working CAN bus** — 348,000 frames, zero errors — with two actuators proven to talk on it.
 
+Since then the emphasis has shifted from *does it work* to *can it be believed*. **Three
+separate faults have been found in the actuator's firmware**, all of them silent: values that
+arrive on time, correctly formed, with no error flag, and are simply not true. Each was caught
+by checking the device's own statements against each other rather than against anything
+external.
+
 **Nothing has moved under power.** No motor has been armed, no motion commanded, and no gait
 has run on hardware. There is no leg — these are individual actuators clamped to a bench.
 Everything in the [README](../../README.md) marked as simulation or CI is exactly that — the
@@ -16,6 +22,10 @@ walking you can see in the repo's videos is MuJoCo, not a robot.
 
 ## The notes
 
+- **[2026-09-10 — Two lies and a workaround](2026-09-10-two-lies-and-a-workaround.md)**
+  A way around the lying telemetry message, correct to better than one encoder count. A second
+  fault of the same kind. A health register with nothing behind it. And the check that caught
+  all of this had already caught it weeks earlier, on screen, unwatched.
 - **[2026-09-07 — The first bus, and a message that lies](2026-09-07-first-bus-and-a-lie.md)**
   The first CAN bus: 348,000 frames, zero errors, telemetry confirmed on the wire. And one
   telemetry message that arrives on time, correctly formed, error-free, carrying an invented

@@ -24,3 +24,9 @@ venv/
 
 # Local build artifacts
 *.render.html
+
+# Defence in depth: the private repo's standing audit must never appear here.
+# It contains unresolved safety findings and vendor criticism. Curation is by
+# hand, so a mistaken copy is the realistic failure mode.
+internal_report.md
+internal_report.*.md
