@@ -32,6 +32,10 @@ These do not belong in this repository, in any file, at any time:
 - Wire-protocol internals, the command grammar and its training data, control internals,
   firmware source, or the full machine configuration.
 - Vendor correspondence, unsent questions, or commercial detail.
+- **Paper drafts and anything under the private repo's `docs/papers/`.** Those carry
+  `[UNSOURCED]` markers, unverified novelty claims, an adversarial self-review written to
+  reject the work, and a list of what has not been searched. **None of it belongs on a
+  public mirror**, and a half-finished novelty claim in public is worse than no claim.
 - Torque budgets, bus-load arithmetic, node-ID schemes, or anything a competitor could
   use to skip work rather than to evaluate the platform.
 

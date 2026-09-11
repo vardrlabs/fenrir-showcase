@@ -30,3 +30,9 @@ venv/
 # hand, so a mistaken copy is the realistic failure mode.
 internal_report.md
 internal_report.*.md
+
+# Paper drafts live in the private repo only. They carry unsourced markers,
+# unverified novelty claims and an adversarial self-review.
+docs/papers/
+paper.md
+novelty_register.md
