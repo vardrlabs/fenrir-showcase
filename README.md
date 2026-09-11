@@ -19,12 +19,33 @@ reference platform for an open modular-robotics SDK.
 Hardware is on the bench and out of its factory state: four actuators
 received, all four read, and all four **configured on 2026-09-03** — the
 first writes we have made to this hardware. Position recovery across a power
-cycle is verified; the limit that came with it is published too. Follow the
-[bring-up log](docs/bringup/) for what each session measured.
-**Nothing has moved under power yet**, no CAN bus has been exercised, and no
-gait has run on hardware. Everything below is simulation and CI, real and
-current — the badge above runs the production kinematics test suite on every
-push:
+cycle is verified; the limit that came with it is published too.
+
+**There is a working CAN bus.** On 2026-09-04 two actuators talked on it for
+348,000 frames with zero errors, and the 5 ms telemetry heartbeat was measured
+on the wire at 4.999 ms mean. The shipped 100 ms default was twice our own
+50 ms fault threshold, which means the safety rule could never have fired
+correctly on a factory-configured unit — the kind of thing you only find by
+measuring.
+
+**Then the emphasis changed from *does it work* to *can it be believed*.**
+Three faults have been found in the actuator's firmware, all of them silent:
+values that arrive on time, correctly formed, with no error flag, and are
+simply not true. One telemetry message reports all zeros while the same device
+reports the truth over USB at the same instant. A health register we had
+designed around turns out not to exist. A position restore came back internally
+inconsistent by 275 encoder counts where a healthy read agrees to under one.
+**Each was caught by checking the device's own statements against each other**,
+not against anything external — which is the whole idea behind how FENRIR will
+decide whether to trust a leg you just plugged in. Read
+[two lies and a workaround](docs/bringup/2026-09-10-two-lies-and-a-workaround.md).
+
+**Nothing has moved under power.** No motor has been armed, no motion
+commanded, and no gait has run on hardware. There is no leg yet — these are
+individual actuators clamped to a bench. Follow the
+[bring-up log](docs/bringup/) for what each session measured. Everything below
+is simulation and CI, real and current — the badge above runs the production
+kinematics test suite on every push:
 
 - **Closed-form leg kinematics**, verified at machine precision: 10,000
   round trips at ~3×10⁻¹⁶ m, analytic Jacobian against finite differences,
@@ -102,4 +123,4 @@ Apache-2.0 planned; hardware: CERN-OHL-P planned).
 ---
 
 *This repository is manually curated from the private development repo at
-milestones. Last updated: 2026-09-06.*
+milestones. Last updated: 2026-09-11.*

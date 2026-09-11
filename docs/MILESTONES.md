@@ -86,7 +86,43 @@ It also corrected our own earlier reasoning — arithmetic we had treated as
 settling where the recovery window sits turned out to fix only its width. See
 [first configuration](bringup/2026-09-03-first-configuration.md).
 
-**Next gate — first motion under power:** settle where the recovery window
-actually sits, prove the CAN bus with a passive listen before anything is
-commanded, wire the emergency stop into the DC main, then one-joint bring-up
-using the same wiggle procedure that runs in CI, and bench characterization.
+**2026-09-04 — the first CAN bus.** Two actuators on one bus, **348,000 frames,
+zero errors**, receive-and-acknowledge only with nothing commanded. The 5 ms
+telemetry rate configured the day before was confirmed *on the wire* at
+4.999 ms mean — register value and emitted rate agree. The factory default of
+100 ms was twice our own 50 ms fault threshold, so a missed beat and a dead node
+would have been indistinguishable on an unmodified unit. The same session found
+the first silent fault: a telemetry message that arrives on time, correctly
+formed, with no error flag, carrying values that are not true. See
+[the first bus, and a message that lies](bringup/2026-09-07-first-bus-and-a-lie.md).
+
+**2026-09-07 — the fault localised, and the recovery window bracketed.** The
+lying message was narrowed to one specific telemetry frame; every other message
+from the same node at the same instant is correct. Park-and-restore cycles
+established that position recovery is exact — residuals inside the encoder's own
+resolution — and bracketed the edge of the recovery window to a 23.5° span. The
+best position hold recorded in the project comes from this work: **0.0070° at the
+output across three days and a power-down.**
+
+**2026-09-10 — a workaround, a second fault, and a register with nothing behind
+it.** A way around the lying message, accurate to better than one encoder count,
+using a different endpoint on the same device. A second fault of the same silent
+kind. And a health register the design had assumed existed turns out not to —
+there is no bus-health signal on this actuator at all. Also the uncomfortable
+part: the check that caught all of this had already caught it weeks earlier, on
+screen, and nobody was watching. The instrument now says so loudly. See
+[two lies and a workaround](bringup/2026-09-10-two-lies-and-a-workaround.md).
+
+**2026-09-11 — the checks became a program.** The validation idea behind hot
+swap — decide whether to trust a module by cross-examining its own reports —
+now runs offline against every capture taken so far: **1,830 checks across four
+sessions of recorded data, catching two of the three known faults, with no false
+alarms in 1,337 checks against healthy data.** The third fault is not detectable
+at this stage and the results say so rather than rounding up. Every recorded
+capture in the repository is now a regression test.
+
+**Next gate — first motion under power:** measure the noise floor the validation
+thresholds should be derived from, settle where the recovery window actually
+sits (it gates leg geometry), wire the emergency stop into the DC main, then
+one-joint bring-up using the same wiggle procedure that runs in CI, and bench
+characterization.
