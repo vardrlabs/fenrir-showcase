@@ -29,15 +29,18 @@ correctly on a factory-configured unit — the kind of thing you only find by
 measuring.
 
 **Then the emphasis changed from *does it work* to *can it be believed*.**
-Three faults have been found in the actuator's firmware, all of them silent:
-values that arrive on time, correctly formed, with no error flag, and are
-simply not true. One telemetry message reports all zeros while the same device
-reports the truth over USB at the same instant. A health register we had
-designed around turns out not to exist. A position restore came back internally
-inconsistent by 275 encoder counts where a healthy read agrees to under one.
-**Each was caught by checking the device's own statements against each other**,
-not against anything external — which is the whole idea behind how FENRIR will
-decide whether to trust a leg you just plugged in. Read
+The actuator has now shown several silent faults: values that arrive on time,
+correctly formed, with no error flag, and are simply not true. One telemetry
+message reports all zeros while the same device reports the truth over USB at
+the same instant; that one matches a regression publicly reported against the
+upstream open-source firmware in 2023, still present in this commercial
+derivative. A position restore came back internally inconsistent by 275 encoder
+counts where a healthy read agrees to within about two. And a health register we had
+designed around turns out not to exist, which we found by provoking a fault and
+watching it stay at zero. **The value faults are caught by checking the device's
+own statements against each other**, not against anything external, which is
+the whole idea behind how FENRIR will decide whether to trust a leg you just
+plugged in. Read
 [two lies and a workaround](docs/bringup/2026-09-10-two-lies-and-a-workaround.md).
 
 **Nothing has moved under power.** No motor has been armed, no motion
