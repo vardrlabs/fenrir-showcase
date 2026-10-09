@@ -121,8 +121,20 @@ alarms in 1,337 checks against healthy data.** The third fault is not detectable
 at this stage and the results say so rather than rounding up. Every recorded
 capture in the repository is now a regression test.
 
-**Next gate — first motion under power:** measure the noise floor the validation
-thresholds should be derived from, settle where the recovery window actually
-sits (it gates leg geometry), wire the emergency stop into the DC main, then
-one-joint bring-up using the same wiggle procedure that runs in CI, and bench
-characterization.
+**2026-10-08 · the controller takes the bus.** The robot's own real-time controller,
+a Teensy 4.1, runs the CAN bus with three actuators at once and records every frame
+both ways on its own clock. Its firmware can only ask questions, which CI proves by
+enumerating every frame it can build. 200 heartbeats a second from each actuator,
+every question answered within 2 ms.
+
+**2026-10-09 · ready, before it was.** Twelve clean minutes, an emergency stop and its
+recovery. At every power-up each actuator reports a position that is not yet real for
+1.5 seconds, then the power-on restore moves it by whole motor turns; our controller
+had called it ready long before. The cross-checks cannot see a whole-turn jump, so the
+fix is a rule about time. See [ready, before it was](bringup/2026-10-09-ready-before-it-was.md).
+
+**Next gate · first motion under power:** make readiness wait until the power-on
+restore has landed, and treat any whole-turn jump after it as a fault; teach the
+validation checks to follow a joint that is moving; then one-joint bring-up using the
+same wiggle procedure that runs in CI, and bench characterization. The emergency stop
+is wired into the DC main (2026-10-06).

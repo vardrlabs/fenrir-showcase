@@ -14,6 +14,21 @@ green. All of the AI — vision, voice, command understanding — runs locally o
 the robot. It is built by [Vardr Labs](https://vardrlabs.com) as the
 reference platform for an open modular-robotics SDK.
 
+## Latest from the bench
+
+![One power-up, three actuators: READY before the restore](docs/media/boot_restore.svg)
+
+*One real power-up of three actuators, drawn from the recorded session. Each says it is still
+booting for exactly 1.5 seconds, goes idle, and only then does its power-on restore move the
+reported position by whole motor turns. Our controller had already called every one of them
+ready.*
+
+| Newest first | What happened | What it found |
+|---|---|---|
+| **2026-10-09** · [Ready, before it was](docs/bringup/2026-10-09-ready-before-it-was.md) | The robot's own controller runs the bus: three actuators, twelve clean minutes, an emergency stop and its recovery | Readiness was declared 1.5 s before the position was real, the same at every power-up. A dying joint does not reliably announce itself. The noise floor sits 45x under the fault threshold |
+| **2026-10-08** · same note | First run with three actuators on one bus | 200 heartbeats a second each, no frame lost while connected, every question answered within 2 ms |
+| **2026-09-10** · [Two lies and a workaround](docs/bringup/2026-09-10-two-lies-and-a-workaround.md) | Asking the device directly instead of listening | a correct value under a lying broadcast, and a second fault of the same kind |
+
 ## Status — what provably works today
 
 Hardware is on the bench and out of its factory state: four actuators
@@ -126,4 +141,4 @@ Apache-2.0 planned; hardware: CERN-OHL-P planned).
 ---
 
 *This repository is manually curated from the private development repo at
-milestones. Last updated: 2026-09-11.*
+milestones. Last updated: 2026-10-09.*

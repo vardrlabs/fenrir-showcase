@@ -20,8 +20,17 @@ has run on hardware. There is no leg — these are individual actuators clamped 
 Everything in the [README](../../README.md) marked as simulation or CI is exactly that — the
 walking you can see in the repo's videos is MuJoCo, not a robot.
 
+**Since 2026-10-08 the robot's own real-time controller runs the bus**, three actuators at once,
+with a firmware that can only ask questions. Its first finding is about time: when, after a
+power-up, an actuator's position can be believed.
+
 ## The notes
 
+- **[2026-10-09 · Ready, before it was](2026-10-09-ready-before-it-was.md)**
+  The robot's own controller runs the bus for the first time: three actuators, twelve clean
+  minutes. Every actuator reported a position that was not yet real for 1.5 seconds after
+  power-up, and our controller called it ready anyway. Also what an emergency stop looks like on
+  the wire, and the noise floor with its timing beside it.
 - **[2026-09-10 — Two lies and a workaround](2026-09-10-two-lies-and-a-workaround.md)**
   A way around the lying telemetry message, correct to better than one encoder count. A second
   fault of the same kind. A health register with nothing behind it. And the check that caught

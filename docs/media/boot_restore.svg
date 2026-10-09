@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 554" role="img" aria-label="Position reported by three actuators over the first 2.2 seconds after power-up. Each spends 1.5 seconds booting, goes idle, then its position jumps by whole motor turns as the power-on restore lands. The bench firmware had already declared every unit ready, before any of it." font-family="'IBM Plex Mono', SFMono-Regular, Menlo, monospace">
+<title>READY before the restore: one power-up, three actuators (LegDay2)</title><desc>Position reported by three actuators over the first 2.2 seconds after power-up. Each spends 1.5 seconds booting, goes idle, then its position jumps by whole motor turns as the power-on restore lands. The bench firmware had already declared every unit ready, before any of it.</desc>
+<style>
+  .ink{fill:#182430} .muted{fill:#46555f} .faint{fill:#5b6872}
+  .grid{stroke:#c3cdd4} .band{fill:#dfe5e9} .line{stroke:#9a4d16} .mark{stroke:#0a6d93}
+  .markf{fill:#0a6d93} .dot{fill:#9a4d16} .bg{fill:#ffffff} .rule{stroke:#5b6872}
+  @media (prefers-color-scheme: dark){
+    .ink{fill:#e9eef3} .muted{fill:#8fa0ae} .faint{fill:#70808d}
+    .grid{stroke:#1d2731} .band{fill:#121a21} .line{stroke:#e89055} .mark{stroke:#5ad0f2}
+    .markf{fill:#5ad0f2} .dot{fill:#e89055} .bg{fill:#0b0f13} .rule{stroke:#70808d}
+  }
+</style>
+<rect class="bg" x="0" y="0" width="900" height="554" rx="8"/>
+<text class="ink" x="132" y="30" font-size="17" font-weight="600">READY before the restore: one power-up, three actuators</text>
+<text class="muted" x="132" y="52" font-size="12">FENRIR bench, LegDay2, 2026-10-09 · reported position, output degrees · from the recorded session</text>
+<rect class="band" x="132.0" y="70" width="434.9" height="118"/>
+<line class="grid" x1="132" x2="770" y1="137.4" y2="137.4" stroke-width="1"/>
+<text class="faint" x="766.0" y="150.4" font-size="10" text-anchor="end">0°</text>
+<line class="rule" x1="566.9" x2="566.9" y1="70" y2="188" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text class="muted" x="140.0" y="86" font-size="11">booting: heartbeat says Axis_State 0</text>
+<text class="muted" x="572.9" y="86" font-size="11">IDLE</text>
+<text class="ink" x="118" y="125.0" font-size="14" font-weight="600" text-anchor="end">U1</text>
+<text class="muted" x="118" y="143.0" font-size="11" text-anchor="end">hip</text>
+<path class="line" fill="none" stroke-width="2" stroke-linejoin="round" d="M135.5,151.6H136.7V151.6H165.7V151.5H194.7V151.5H223.7V151.5H252.7V151.5H281.7V151.5H310.6V151.5H339.6V151.5H368.7V151.5H397.7V151.5H426.7V151.5H455.7V151.5H484.7V151.5H513.6V151.5H542.7V151.5H571.7V151.5H600.7V151.5H629.7V90.9H658.7V90.9H687.7V90.9H716.7V90.9H745.7V90.9H770.0"/>
+<text class="ink" x="780.0" y="94.9" font-size="13">+69.07°</text>
+<line class="mark" x1="137.2" x2="137.2" y1="135.6" y2="167.6" stroke-width="2"/>
+<text class="markf" x="143.2" y="143.6" font-size="11" font-weight="600">READY</text>
+<text class="ink" x="637.7" y="125.2" font-size="12">restore: +2 turns</text>
+<rect class="band" x="132.0" y="218" width="434.9" height="118"/>
+<line class="grid" x1="132" x2="770" y1="285.4" y2="285.4" stroke-width="1"/>
+<text class="faint" x="766.0" y="298.4" font-size="10" text-anchor="end">0°</text>
+<line class="rule" x1="566.9" x2="566.9" y1="218" y2="336" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text class="ink" x="118" y="273.0" font-size="14" font-weight="600" text-anchor="end">U2</text>
+<text class="muted" x="118" y="291.0" font-size="11" text-anchor="end">knee</text>
+<path class="line" fill="none" stroke-width="2" stroke-linejoin="round" d="M135.6,286.7H137.2V286.7H166.2V286.7H195.2V286.7H224.2V286.7H253.2V286.7H282.2V286.7H311.2V286.7H340.2V286.7H369.2V286.7H398.2V286.7H427.2V286.7H456.2V286.7H485.2V286.7H514.2V286.7H543.2V286.7H572.2V286.7H601.2V286.7H630.2V226.0H659.2V226.0H688.2V226.0H717.2V226.0H746.2V226.0H770.0"/>
+<text class="ink" x="780.0" y="230.0" font-size="13">+88.09°</text>
+<line class="mark" x1="137.0" x2="137.0" y1="270.7" y2="302.7" stroke-width="2"/>
+<text class="markf" x="143.0" y="278.7" font-size="11" font-weight="600">READY</text>
+<text class="ink" x="638.2" y="260.4" font-size="12">restore: +2 turns</text>
+<rect class="band" x="132.0" y="366" width="435.5" height="118"/>
+<line class="grid" x1="132" x2="770" y1="433.4" y2="433.4" stroke-width="1"/>
+<text class="faint" x="766.0" y="446.4" font-size="10" text-anchor="end">0°</text>
+<line class="rule" x1="567.5" x2="567.5" y1="366" y2="484" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text class="ink" x="118" y="421.0" font-size="14" font-weight="600" text-anchor="end">U3</text>
+<text class="muted" x="118" y="439.0" font-size="11" text-anchor="end">thigh</text>
+<path class="line" fill="none" stroke-width="2" stroke-linejoin="round" d="M208.1,441.5H209.2V441.5H238.2V441.5H267.2V441.5H296.2V441.5H325.2V441.5H354.2V441.5H383.2V441.5H412.2V441.5H441.2V441.5H470.2V441.5H499.2V441.5H528.2V441.5H557.2V441.5H586.2V441.5H615.2V471.8H644.2V471.8H673.2V471.8H702.2V471.8H731.1V471.8H760.1V471.8H770.0"/>
+<text class="ink" x="780.0" y="475.8" font-size="13">-56.96°</text>
+<line class="mark" x1="212.6" x2="212.6" y1="425.5" y2="457.5" stroke-width="2"/>
+<text class="markf" x="218.6" y="433.5" font-size="11" font-weight="600">READY</text>
+<text class="ink" x="623.2" y="460.7" font-size="12">restore: -1 turn</text>
+<text class="muted" x="132.0" y="504" font-size="11" text-anchor="middle">0.0</text>
+<text class="muted" x="277.0" y="504" font-size="11" text-anchor="middle">0.5</text>
+<text class="muted" x="422.0" y="504" font-size="11" text-anchor="middle">1.0</text>
+<text class="muted" x="567.0" y="504" font-size="11" text-anchor="middle">1.5</text>
+<text class="muted" x="712.0" y="504" font-size="11" text-anchor="middle">2.0</text>
+<text class="muted" x="451.0" y="526" font-size="11" text-anchor="middle">seconds after each unit's first heartbeat</text>
+</svg>
