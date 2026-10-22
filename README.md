@@ -98,6 +98,24 @@ deep inside the actuator envelope:
 
 **First hardware contact, 2026-08-11** — [what the actuator actually said](docs/bringup/2026-08-11-first-contact.md): the shipped firmware reports a version that does not mean what it says, and the encoder resolution question is settled.
 
+**The deck, the operator's screen** (2026-10-22): every actuator the robot's configuration describes,
+its state in the one seven-state vocabulary, its angle, and, in words, what has not been checked yet.
+
+![The deck's stage: twelve simulated actuators, spread edge to edge](docs/media/deck/stage-fleet-2560.webp)
+
+*A simulated fleet with invented readings, laid out from the robot's configuration. Every actuator says what it
+has not verified: its wrap boundary is assumed and its direction unchecked.*
+
+![The bench leg's three actuators, the firmware running in simulation](docs/media/deck/stage-bench-sil-2560.webp)
+
+*The bench leg's three actuators through the real firmware, compiled to run in simulation. The amber arc on U3 is
+the wrap band measured on the bench; U1 and U2 still show the assumed boundary.*
+
+![The robot drawn from its configuration, the bench leg at the front left](docs/media/deck/robot-bench-sil-2560.webp)
+
+*The body is a placeholder until the CAD exists. The bench leg is drawn where it will mount, and the three legs
+that do not exist yet say so.*
+
 ## How this gets built
 
 FENRIR is developed by one engineer working with Anthropic's Claude as a
